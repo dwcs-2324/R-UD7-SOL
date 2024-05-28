@@ -16,6 +16,8 @@ window.onload = onceLoaded;
 function onceLoaded() {
 
     console.debug("window loaded");
+
+    document.getElementById('reservaForm').onsubmit = comprobarReserva;
     
   
 }

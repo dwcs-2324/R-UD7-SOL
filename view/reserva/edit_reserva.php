@@ -43,7 +43,8 @@ if (isset($dataToView["data"])) {
      
 <!-- reserva -->
 
-        <form method="post" action="FrontController.php?controller=Reserva&action=save"  id="reservaForm">
+        <form method="post" 
+        action="FrontController.php?controller=Reserva&action=save"  id="reservaForm">
       <div class="mb-3">
         <label for="restaurante" class="form-label">Restaurante</label>
         <select class="form-select" aria-label="Restaurante" required name="restaurante" id="restaurante">
@@ -112,5 +113,6 @@ if (isset($dataToView["data"])) {
 
 
 
+<script src=../js/modal.js></script>
 <script src=../js/global.js></script>
 <script src=../js/manejarReservas.js></script>

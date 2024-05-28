@@ -38,7 +38,7 @@ class ReservaController
         $tel = "";
         $restauranteId = -1;
 
-      
+
 
         if (isset($_POST["restaurante"])) {
             $restauranteId = $_POST["restaurante"];
@@ -93,15 +93,19 @@ class ReservaController
     {
         try {
             $response["code"] = 0;
-           // Modifica el método comprobarReservaJSON en ReservaController.php para que lea los datos tel y restId del objeto JSON enviado con el API de Fetch (2 puntos)
-           
-           
-           
-           
-           
-           if (isset($data["tel"]) && isset($data["restId"])) {
+            // Modifica el método comprobarReservaJSON en ReservaController.php para que lea los datos tel y restId del objeto JSON enviado con el API de Fetch (2 puntos)
 
-                $code =   $this->reservaServicio->comprobarReserva($data["tel"], $data["restId"]);
+
+            // Toma datos sin procesar de la solicitud
+            $json = file_get_contents('php://input');
+
+            // Lo convierte en un array asociativo
+            $data = json_decode($json, true);
+
+
+            if (isset($data["tel"]) && isset($data["restId"])) {
+
+                $code = $this->reservaServicio->comprobarReserva($data["tel"], $data["restId"]);
                 $response["code"] = $code;
             } else {
                 //400 Bad Request
