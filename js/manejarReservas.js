@@ -5,10 +5,11 @@ function comprobarReserva(event) {
     let tel = document.getElementById('tel').value;
     let restId = document.getElementById('restaurante').value;
 
-    let data = { 'tel2': tel, restId };
+    let data = { 'tel': tel, restId };
 
     let url = BASE_URL + "?controller=Reserva&action=comprobarReservaJSON";
     
+   
 
     var myInit = {
         method: "POST",
@@ -46,7 +47,7 @@ function comprobarReserva(event) {
          
             }
         
-        }).catch(error => showMsg('Ha ocurrido un erro inesperado. Compruebe que tiene acceso a Internet', true, ERROR_MSG_TYPE));
+        }).catch(error => showMsg('Ha ocurrido un erro inesperado. Compruebe que tiene acceso a Internet + error', true, ERROR_MSG_TYPE));
     
       
       
